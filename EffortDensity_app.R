@@ -6,7 +6,6 @@ library(leaflet)
 library(raster)
 
 # process data
-#setwd("C:/Users/FishVid/Documents/R/Shiny Apps/Effort_App")
 rasterdata <- lapply(2016:2023, function(year) {
   rasterfile <- paste0("rasters/EffortDensity", year, ".tif")
   raster(rasterfile) %>% reclassify(cbind(-Inf, 0.01, NA), right=FALSE)
